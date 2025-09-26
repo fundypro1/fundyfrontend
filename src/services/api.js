@@ -1,5 +1,5 @@
-import axios from 'axios';
-const API_URL = 'http://localhost:8000';
+import axios from 'axios'
+const API_URL = 'https://fundybackend-9.onrender.com';
 
 // Create axios instance
 const apiClient = axios.create({
