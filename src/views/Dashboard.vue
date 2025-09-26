@@ -1094,7 +1094,8 @@ export default {
 }
 </script>
 
-<style scoped>
+
+<style>
 * {
   margin: 0;
   padding: 0;
@@ -1332,7 +1333,6 @@ export default {
   color: #848e9c;
 }
 
-
 /* Mining Progress Container */
 .mining-progress-container {
   background: linear-gradient(135deg, #1e2329 0%, #2b3139 100%);
@@ -1465,7 +1465,6 @@ export default {
   width: 60px;
   height: 60px;
 }
-
 
 /* Earnings Section */
 .earnings-section {
@@ -1768,746 +1767,6 @@ export default {
   border: 1px solid rgba(139, 92, 246, 0.2);
   border-radius: 12px;
   padding: 16px;
-  text-align: left;
-}
-
-.requirement-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.requirement-icon {
-  font-size: 16px;
-  flex-shrink: 0;
-}
-
-.requirement-text {
-  font-size: 13px;
-  color: #d1d5db;
-  line-height: 1.4;
-}
-
-/* Credit Success Alert */
-.credit-success-alert {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  background: rgba(34, 197, 94, 0.1);
-  border: 1px solid rgba(34, 197, 94, 0.3);
-  border-radius: 12px;
-  padding: 16px;
-  margin-top: 16px;
-  position: relative;
-  animation: success-slide 0.5s ease-out;
-}
-
-@keyframes success-slide {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.credit-success-alert .alert-icon {
-  font-size: 24px;
-  flex-shrink: 0;
-  margin-top: 2px;
-  animation: celebration 1s ease-out;
-}
-
-@keyframes celebration {
-  0% { transform: scale(0); }
-  50% { transform: scale(1.3); }
-  100% { transform: scale(1); }
-}
-
-.credit-success-alert .alert-content {
-  flex: 1;
-}
-
-.credit-success-alert .alert-content h5 {
-  font-size: 16px;
-  font-weight: 600;
-  color: #22c55e;
-  margin: 0 0 4px 0;
-}
-
-.credit-success-alert .alert-content p {
-  font-size: 14px;
-  color: #d1d5db;
-  margin: 0;
-  line-height: 1.4;
-}
-
-.credit-success-alert .alert-close {
-  background: none;
-  border: none;
-  color: #848e9c;
-  cursor: pointer;
-  font-size: 20px;
-  padding: 4px;
-  border-radius: 4px;
-  transition: all 0.2s;
-  position: absolute;
-  top: 12px;
-  right: 12px;
-}
-
-.credit-success-alert .alert-close:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
-}
-
-/* Fade Transition */
-.fade-enter-active, .fade-leave-active {
-  transition: all 0.3s ease;
-}
-
-.fade-enter-from, .fade-leave-to {
-  opacity: 0;
-  transform: translateY(-10px);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .earnings-header {
-    flex-direction: column;
-    text-align: center;
-    gap: 12px;
-  }
-  
-  .earnings-icon {
-    width: 48px;
-    height: 48px;
-    font-size: 24px;
-  }
-  
-  .earnings-amount .amount {
-    font-size: 28px;
-  }
-  
-  .credit-btn {
-    height: 50px;
-    max-width: none;
-  }
-  
-  .btn-text {
-    font-size: 15px;
-  }
-  
-  .requirements-info {
-    padding: 12px;
-  }
-  
-  .requirement-text {
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  .earnings-card {
-    padding: 16px;
-  }
-  
-  .earnings-icon {
-    width: 44px;
-    height: 44px;
-    font-size: 22px;
-  }
-  
-  .earnings-amount .amount {
-    font-size: 24px;
-  }
-  
-  .progress-bar-track {
-    height: 6px;
-  }
-  
-  .credit-btn {
-    height: 48px;
-  }
-  
-  .btn-icon {
-    font-size: 18px;
-  }
-  
-  .btn-text {
-    font-size: 14px;
-  }
-  
-  .credit-success-alert {
-    padding: 12px;
-  }
-  
-  .credit-success-alert .alert-content h5 {
-    font-size: 14px;
-  }
-  
-  .credit-success-alert .alert-content p {
-    font-size: 13px;
-  }
-}
-
-/* Additional Animation for Ready State */
-.credit-btn.credit-available::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: conic-gradient(
-    transparent,
-    rgba(240, 185, 11, 0.3),
-    transparent,
-    rgba(240, 185, 11, 0.3)
-  );
-  animation: rotate-glow 4s linear infinite;
-  z-index: 0;
-}
-
-@keyframes rotate-glow {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-.particle {
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  background: #f0b90b;
-  border-radius: 50%;
-  animation: particle-float 3s infinite;
-}
-
-.particle:nth-child(1) { 
-  animation-delay: 0s; 
-  left: 10px;
-  top: 20px;
-}
-.particle:nth-child(2) { 
-  animation-delay: 0.3s; 
-  left: 45px;
-  top: 15px;
-}
-.particle:nth-child(3) { 
-  animation-delay: 0.6s; 
-  left: 25px;
-  top: 30px;
-}
-.particle:nth-child(4) { 
-  animation-delay: 0.9s; 
-  left: 35px;
-  top: 25px;
-}
-.particle:nth-child(5) { 
-  animation-delay: 1.2s; 
-  left: 15px;
-  top: 35px;
-}
-.particle:nth-child(6) { 
-  animation-delay: 1.5s; 
-  left: 40px;
-  top: 10px;
-}
-.particle:nth-child(7) { 
-  animation-delay: 1.8s; 
-  left: 20px;
-  top: 10px;
-}
-.particle:nth-child(8) { 
-  animation-delay: 2.1s; 
-  left: 50px;
-  top: 30px;
-}
-
-@keyframes particle-float {
-  0% {
-    opacity: 0;
-    transform: translateY(0) scale(0);
-  }
-  20% {
-    opacity: 1;
-    transform: translateY(-10px) scale(1);
-  }
-  80% {
-    opacity: 1;
-    transform: translateY(-20px) scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-30px) scale(0);
-  }
-}
-
-.mining-pickaxe {
-  font-size: 24px;
-  z-index: 1;
-  animation: pickaxe-swing 1.5s infinite;
-}
-
-@keyframes pickaxe-swing {
-  0%, 100% { transform: rotate(0deg); }
-  25% { transform: rotate(-15deg); }
-  75% { transform: rotate(15deg); }
-}
-
-/* Enhanced Mining Button */
-.mining-btn {
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  min-width: 200px;
-  height: 50px;
-}
-
-.mining-btn.mining-ready {
-  background: linear-gradient(135deg, #f0b90b, #f8d12f);
-  color: #000;
-  border: 2px solid #f0b90b;
-  box-shadow: 0 4px 15px rgba(240, 185, 11, 0.3);
-  animation: ready-pulse 2s infinite;
-}
-
-@keyframes ready-pulse {
-  0%, 100% { 
-    box-shadow: 0 4px 15px rgba(240, 185, 11, 0.3);
-    transform: scale(1);
-  }
-  50% { 
-    box-shadow: 0 6px 20px rgba(240, 185, 11, 0.5);
-    transform: scale(1.02);
-  }
-}
-
-.mining-btn.mining-active {
-  background: #374151;
-  color: #f0b90b;
-  border: 2px solid #f0b90b;
-  cursor: not-allowed;
-}
-
-.mining-btn.mining-disabled {
-  background: #2b3139;
-  color: #848e9c;
-  border: 2px solid #474d57;
-  cursor: not-allowed;
-  opacity: 0.6;
-}
-
-.btn-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  position: relative;
-  z-index: 2;
-}
-
-.btn-icon {
-  font-size: 18px;
-  transition: transform 0.2s;
-}
-
-.mining-btn.mining-ready:hover .btn-icon {
-  transform: scale(1.2);
-}
-
-.btn-text {
-  font-weight: 600;
-  font-size: 14px;
-}
-
-/* Button Shine Effect */
-.btn-shine {
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.3),
-    transparent
-  );
-  animation: shine 3s infinite;
-  z-index: 1;
-}
-
-@keyframes shine {
-  0% { left: -100%; }
-  100% { left: 100%; }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .mining-progress-container {
-    padding: 16px;
-  }
-  
-  .mining-info {
-    flex-direction: column;
-    gap: 8px;
-    text-align: center;
-  }
-  
-  .mining-animation {
-    height: 30px;
-  }
-  
-  .mining-pickaxe {
-    font-size: 20px;
-  }
-  
-  .mining-btn {
-    min-width: 180px;
-    height: 45px;
-  }
-  
-  .btn-text {
-    font-size: 13px;
-  }
-}
-
-@media (max-width: 480px) {
-  .mining-progress-container {
-    padding: 12px;
-  }
-  
-  .progress-bar {
-    height: 10px;
-  }
-  
-  .progress-text {
-    font-size: 9px;
-  }
-  
-  .mining-btn {
-    min-width: 160px;
-    height: 40px;
-  }
-  
-  .btn-icon {
-    font-size: 16px;
-  }
-  
-  .btn-text {
-    font-size: 12px;
-  }
-}
-
-/* Action Section */
-.action-section {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-bottom: 32px;
-}
-
-.action-card {
-  background: #1e2329;
-  border: 1px solid #474d57;
-  border-radius: 12px;
-  padding: 24px;
-  cursor: pointer;
-  transition: all 0.3s;
-  position: relative;
-  overflow: hidden;
-}
-
-.action-card:hover {
-  transform: translateY(-4px);
-  border-color: #f0b90b;
-  box-shadow: 0 8px 25px rgba(240, 185, 11, 0.15);
-}
-
-.card-icon {
-  font-size: 32px;
-  margin-bottom: 16px;
-}
-
-.card-content h3 {
-  font-size: 18px;
-  margin-bottom: 8px;
-  color: #ffffff;
-}
-
-.card-content p {
-  color: #848e9c;
-  font-size: 14px;
-  margin-bottom: 12px;
-}
-
-.card-tag {
-  background: #f0b90b;
-  color: #000000;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 10px;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-/* Live Feed */
-.live-feed-section {
-  margin-bottom: 32px;
-}
-
-.section-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.section-header h2 {
-  font-size: 20px;
-  color: #ffffff;
-}
-
-.live-indicator {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: #03a66d;
-  font-size: 12px;
-}
-
-.pulse-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #03a66d;
-  animation: pulse 1s infinite;
-}
-
-.feed-container {
-  background: #1e2329;
-  border: 1px solid #474d57;
-  border-radius: 12px;
-  padding: 16px;
-  max-height: 300px;
-  overflow-y: auto;
-}
-
-.feed-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px;
-  border-radius: 8px;
-  margin-bottom: 8px;
-  transition: all 0.3s;
-}
-
-.action-btn {
-  padding: 12px 16px;
-  background: #0b0e11;
-  border: 1px solid #474d57;
-  border-radius: 8px;
-  color: #848e9c;
-  cursor: pointer;
-  transition: all 0.2s;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.action-btn:hover {
-  background: #2b3139;
-  color: #f0b90b;
-  border-color: #f0b90b;
-}
-
-.action-btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.deposit-btn {
-  background: #f0b90b;
-  color: #000000;
-  border-color: #f0b90b;
-}
-
-.deposit-btn:hover {
-  opacity: 0.9;
-  color: #000000;
-}
-
-
-.feed-item.fade-in {
-  animation: fadeIn 0.5s;
-  background: rgba(240, 185, 11, 0.1);
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateX(-20px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-.user-avatar .avatar-circle {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #f0b90b, #f8d12f);
-  color: #000000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-}
-
-.transaction-info {
-  flex: 1;
-}
-
-.user-action {
-  font-size: 14px;
-  margin-bottom: 4px;
-}
-
-.transaction-details {
-  display: flex;
-  gap: 16px;
-  font-size: 12px;
-}
-
-.amount.profit {
-  color: #03a66d;
-  font-weight: 600;
-}
-
-.time {
-  color: #848e9c;
-}
-
-.transaction-badge span {
-  background: #474d57;
-  color: #ffffff;
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-size: 10px;
-}
-
-/* Stats Grid */
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  margin-bottom: 32px;
-}
-
-.stat-card {
-  background: #1e2329;
-  border: 1px solid #474d57;
-  border-radius: 12px;
-  padding: 24px;
-  text-align: center;
-  transition: all 0.3s;
-}
-
-.stat-card:hover {
-  border-color: #f0b90b;
-}
-
-.stat-icon {
-  font-size: 32px;
-  margin-bottom: 12px;
-}
-
-.stat-content h4 {
-  color: #848e9c;
-  font-size: 14px;
-  margin-bottom: 8px;
-}
-
-.stat-number {
-  font-size: 24px;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 4px;
-}
-
-.stat-change {
-  font-size: 12px;
-}
-
-.stat-change.positive {
-  color: #03a66d;
-}
-
-/* Market Section */
-.market-section {
-  background: #1e2329;
-  border: 1px solid #474d57;
-  border-radius: 12px;
-  padding: 24px;
-}
-
-.market-section h2 {
-  margin-bottom: 20px;
-  color: #ffffff;
-}
-
-.market-items {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-}
-
-.market-item {
-  display: flex;
-  flex-direction: column;
-  padding: 16px;
-  background: #0b0e11;
-  border-radius: 8px;
-  border: 1px solid #474d57;
-}
-
-.market-symbol {
-  font-size: 14px;
-  font-weight: 600;
-  color: #ffffff;
-  margin-bottom: 8px;
-}
-
-.market-price {
-  font-size: 16px;
-  color: #f0b90b;
-  margin-bottom: 4px;
-}
-
-.market-change {
-  font-size: 12px;
-}
-
-.market-change.positive {
-  color: #03a66d;
-}
-
-.market-change.negative {
-  color: #cf304a;
-}
-
-/* Profit Notifications */
-.profit-notifications {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1000;
-}
-
-.profit-alert {
-  background: linear-gradient(135deg, #03a66d, #02c76f);
-  border: 1px solid #03a66d;
-  border-radius: 12px;
-  padding: 16px;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -2756,25 +2015,1148 @@ export default {
   font-weight: 600;
 }
 
-/* Responsive updates */
-@media (max-width: 1024px) {
-  .investment-plans {
-    grid-template-columns: 1fr;
+/* Additional Animation for Ready State */
+.credit-btn.credit-available::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    transparent,
+    rgba(240, 185, 11, 0.3),
+    transparent,
+    rgba(240, 185, 11, 0.3)
+  );
+  animation: rotate-glow 4s linear infinite;
+  z-index: 0;
+}
+
+@keyframes rotate-glow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #f0b90b;
+  border-radius: 50%;
+  animation: particle-float 3s infinite;
+}
+
+.particle:nth-child(1) { 
+  animation-delay: 0s; 
+  left: 10px;
+  top: 20px;
+}
+.particle:nth-child(2) { 
+  animation-delay: 0.3s; 
+  left: 45px;
+  top: 15px;
+}
+.particle:nth-child(3) { 
+  animation-delay: 0.6s; 
+  left: 25px;
+  top: 30px;
+}
+.particle:nth-child(4) { 
+  animation-delay: 0.9s; 
+  left: 35px;
+  top: 25px;
+}
+.particle:nth-child(5) { 
+  animation-delay: 1.2s; 
+  left: 15px;
+  top: 35px;
+}
+.particle:nth-child(6) { 
+  animation-delay: 1.5s; 
+  left: 40px;
+  top: 10px;
+}
+.particle:nth-child(7) { 
+  animation-delay: 1.8s; 
+  left: 20px;
+  top: 10px;
+}
+.particle:nth-child(8) { 
+  animation-delay: 2.1s; 
+  left: 50px;
+  top: 30px;
+}
+
+@keyframes particle-float {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0);
   }
-  
-  .stories-grid {
-    grid-template-columns: 1fr;
+  20% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(-20px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-30px) scale(0);
   }
 }
 
-@media (max-width: 768px) {
-  .profit-alert {
-    min-width: 280px;
+.mining-pickaxe {
+  font-size: 24px;
+  z-index: 1;
+  animation: pickaxe-swing 1.5s infinite;
+}
+
+@keyframes pickaxe-swing {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-15deg); }
+  75% { transform: rotate(15deg); }
+}
+
+/* ENHANCED MOBILE RESPONSIVE STYLES */
+
+/* Mobile First - Small devices (320px to 480px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 16px;
   }
-  
+
+  /* Header adjustments */
+  .header-section {
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    text-align: center;
+  }
+
+  .welcome-text h1 {
+    font-size: 22px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+  }
+
+  .live-stats {
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .stat-value {
+    font-size: 16px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+  }
+
+  /* Balance section - stack vertically */
+  .balance-section {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .main-balance-card {
+    padding: 20px;
+  }
+
+  .balance-amount {
+    font-size: 36px;
+  }
+
+  .currency {
+    font-size: 18px;
+  }
+
+  .earnings-card {
+    padding: 16px;
+  }
+
+  .earnings-amount {
+    font-size: 24px;
+  }
+
+  /* Mining progress */
+  .mining-progress-container {
+    padding: 16px;
+  }
+
+  .mining-info {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .mining-text {
+    font-size: 14px;
+  }
+
+  .mining-time {
+    font-size: 12px;
+  }
+
+  .progress-bar {
+    height: 10px;
+  }
+
+  .progress-text {
+    font-size: 9px;
+  }
+
+  .mining-animation {
+    height: 30px;
+  }
+
+  .mining-pickaxe {
+    font-size: 20px;
+  }
+
+  /* Earnings section */
+  .earnings-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .earnings-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 22px;
+  }
+
+  .earnings-amount .amount {
+    font-size: 24px;
+  }
+
+  .earnings-amount .currency {
+    font-size: 14px;
+  }
+
+  .progress-bar-track {
+    height: 6px;
+  }
+
+  /* Buttons */
+  .credit-btn {
+    height: 48px;
+    max-width: none;
+    width: 100%;
+  }
+
+  .btn-icon {
+    font-size: 18px;
+  }
+
+  .btn-text {
+    font-size: 14px;
+  }
+
+  .mining-btn {
+    min-width: 100%;
+    height: 45px;
+  }
+
+  /* Action section - single column */
+  .action-section {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .action-card {
+    padding: 16px;
+  }
+
+  .card-icon {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  .card-content h3 {
+    font-size: 16px;
+  }
+
+  .card-content p {
+    font-size: 13px;
+  }
+
+  /* Stats grid - 2 columns */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .stat-card {
+    padding: 16px;
+  }
+
+  .stat-icon {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  .stat-number {
+    font-size: 18px;
+  }
+
+  .stat-content h4 {
+    font-size: 12px;
+  }
+
+  /* Market section */
+  .market-section {
+    padding: 16px;
+  }
+
+  .market-items {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .market-item {
+    padding: 12px;
+  }
+
+  .market-symbol {
+    font-size: 12px;
+  }
+
+  .market-price {
+    font-size: 14px;
+  }
+
+  .market-change {
+    font-size: 11px;
+  }
+
+  /* Investment plans - single column */
+  .investment-plans {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .plan-card {
+    padding: 16px;
+  }
+
+  .plan-header h3 {
+    font-size: 16px;
+  }
+
+  .plan-roi {
+    font-size: 20px;
+  }
+
+  .plan-feature {
+    font-size: 13px;
+  }
+
+  /* Success stories - single column */
+  .stories-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .story-card {
+    padding: 16px;
+  }
+
+  .story-avatar {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  /* Feed items */
+  .feed-container {
+    padding: 12px;
+  }
+
+  .feed-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .transaction-details {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .user-avatar .avatar-circle {
+    width: 32px;
+    height: 32px;
+  }
+
+  /* Notifications */
   .profit-notifications {
-    right: 10px;
     left: 10px;
+    right: 10px;
+    top: 10px;
+  }
+
+  .profit-alert {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .credit-success-alert {
+    padding: 12px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .credit-success-alert .alert-content h5 {
+    font-size: 14px;
+  }
+
+  .credit-success-alert .alert-content p {
+    font-size: 13px;
+  }
+
+  .requirements-info {
+    padding: 12px;
+  }
+
+  .requirement-text {
+    font-size: 12px;
+  }
+
+  .requirement-icon {
+    font-size: 14px;
   }
 }
+
+/* Medium mobile devices (481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  .header-section {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .welcome-text h1 {
+    font-size: 24px;
+  }
+
+  .live-stats {
+    gap: 24px;
+    justify-content: center;
+  }
+
+  /* Balance section adjustments */
+  .balance-section {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .main-balance-card {
+    padding: 24px;
+  }
+
+  .balance-amount {
+    font-size: 42px;
+  }
+
+  .currency {
+    font-size: 20px;
+  }
+
+  .earnings-card {
+    padding: 20px;
+  }
+
+  .earnings-amount {
+    font-size: 28px;
+  }
+
+  /* Action section - 2 columns */
+  .action-section {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .action-card {
+    padding: 20px;
+  }
+
+  .card-icon {
+    font-size: 28px;
+  }
+
+  /* Stats grid - 2 columns */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .stat-card {
+    padding: 20px;
+  }
+
+  .stat-icon {
+    font-size: 28px;
+  }
+
+  .stat-number {
+    font-size: 20px;
+  }
+
+  /* Market section */
+  .market-items {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+
+  /* Investment plans - single column */
+  .investment-plans {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .plan-card {
+    padding: 20px;
+  }
+
+  /* Success stories - single column */
+  .stories-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .mining-btn {
+    min-width: 200px;
+    height: 48px;
+  }
+
+  .credit-btn {
+    height: 52px;
+  }
+}
+
+/* Large tablets (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    padding: 24px;
+  }
+
+  /* Action section - 2 columns */
+  .action-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Stats grid - 2 columns */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Market section */
+  .market-items {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Investment plans - 2 columns */
+  .investment-plans {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Success stories - 2 columns */
+  .stories-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Landscape phone orientation */
+@media (max-height: 500px) and (orientation: landscape) {
+  .header-section {
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+  }
+
+  .welcome-text h1 {
+    font-size: 20px;
+  }
+
+  .balance-section {
+    margin-bottom: 20px;
+  }
+
+  .main-balance-card,
+  .earnings-card {
+    padding: 16px;
+  }
+
+  .balance-amount {
+    font-size: 32px;
+  }
+
+  .mining-progress-container {
+    padding: 16px;
+  }
+
+  .action-section {
+    margin-bottom: 20px;
+  }
+
+  .action-card {
+    padding: 16px;
+  }
+}
+
+/* Touch-friendly interactive elements */
+@media (hover: none) and (pointer: coarse) {
+  .action-card,
+  .stat-card,
+  .plan-card,
+  .story-card {
+    transition: none;
+  }
+
+  .action-card:active,
+  .credit-btn:active,
+  .mining-btn:active,
+  .action-btn:active {
+    transform: scale(0.98);
+  }
+
+  /* Larger touch targets */
+  .btn-content {
+    padding: 8px;
+  }
+
+  .alert-close {
+    padding: 12px;
+    font-size: 24px;
+  }
+
+  .balance-toggle {
+    padding: 8px;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .progress-text,
+  .stat-label,
+  .requirement-text {
+    font-weight: 500;
+  }
+}
+
+/* Reduce animations on mobile for better performance */
+@media (max-width: 768px) {
+  .mining-icon,
+  .mining-pickaxe,
+  .btn-icon {
+    animation-duration: 3s;
+  }
+
+  .particle,
+  .status-dot,
+  .pulse-dot {
+    animation-duration: 2s;
+  }
+
+  .progress-shimmer,
+  .progress-flow,
+  .shimmer {
+    animation-duration: 3s;
+  }
+}
+
+/* Accessibility improvements for mobile */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Dark mode adjustments for mobile */
+@media (prefers-color-scheme: dark) and (max-width: 768px) {
+  .dashboard {
+    background: #000000;
+  }
+
+  .main-balance-card,
+  .earnings-card,
+  .action-card,
+  .stat-card,
+  .plan-card,
+  .story-card {
+    background: #111111;
+    border-color: #333333;
+    text-align: left;
+  }
+}
+
+
+.requirement-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.requirement-icon {
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.requirement-text {
+  font-size: 13px;
+  color: #d1d5db;
+  line-height: 1.4;
+}
+
+/* Credit Success Alert */
+.credit-success-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  border-radius: 12px;
+  padding: 16px;
+  margin-top: 16px;
+  position: relative;
+  animation: success-slide 0.5s ease-out;
+}
+
+@keyframes success-slide {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.credit-success-alert .alert-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  animation: celebration 1s ease-out;
+}
+
+@keyframes celebration {
+  0% { transform: scale(0); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+.credit-success-alert .alert-content {
+  flex: 1;
+}
+
+.credit-success-alert .alert-content h5 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #22c55e;
+  margin: 0 0 4px 0;
+}
+
+.credit-success-alert .alert-content p {
+  font-size: 14px;
+  color: #d1d5db;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.credit-success-alert .alert-close {
+  background: none;
+  border: none;
+  color: #848e9c;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.2s;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+.credit-success-alert .alert-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+/* Fade Transition */
+.fade-enter-active, .fade-leave-active {
+  transition: all 0.3s ease;
+}
+
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+/* Enhanced Mining Button */
+.mining-btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  min-width: 200px;
+  height: 50px;
+}
+
+.mining-btn.mining-ready {
+  background: linear-gradient(135deg, #f0b90b, #f8d12f);
+  color: #000;
+  border: 2px solid #f0b90b;
+  box-shadow: 0 4px 15px rgba(240, 185, 11, 0.3);
+  animation: ready-pulse 2s infinite;
+}
+
+@keyframes ready-pulse {
+  0%, 100% { 
+    box-shadow: 0 4px 15px rgba(240, 185, 11, 0.3);
+    transform: scale(1);
+  }
+  50% { 
+    box-shadow: 0 6px 20px rgba(240, 185, 11, 0.5);
+    transform: scale(1.02);
+  }
+}
+
+.mining-btn.mining-active {
+  background: #374151;
+  color: #f0b90b;
+  border: 2px solid #f0b90b;
+  cursor: not-allowed;
+}
+
+.mining-btn.mining-disabled {
+  background: #2b3139;
+  color: #848e9c;
+  border: 2px solid #474d57;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.mining-btn.mining-ready:hover .btn-icon {
+  transform: scale(1.2);
+}
+
+/* Action Section */
+.action-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.action-card {
+  background: #1e2329;
+  border: 1px solid #474d57;
+  border-radius: 12px;
+  padding: 24px;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.action-card:hover {
+  transform: translateY(-4px);
+  border-color: #f0b90b;
+  box-shadow: 0 8px 25px rgba(240, 185, 11, 0.15);
+}
+
+.card-icon {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+.card-content h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.card-content p {
+  color: #848e9c;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.card-tag {
+  background: #f0b90b;
+  color: #000000;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Live Feed */
+.live-feed-section {
+  margin-bottom: 32px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.section-header h2 {
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.live-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #03a66d;
+  font-size: 12px;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #03a66d;
+  animation: pulse 1s infinite;
+}
+
+.feed-container {
+  background: #1e2329;
+  border: 1px solid #474d57;
+  border-radius: 12px;
+  padding: 16px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.feed-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  transition: all 0.3s;
+}
+
+.action-btn {
+  padding: 12px 16px;
+  background: #0b0e11;
+  border: 1px solid #474d57;
+  border-radius: 8px;
+  color: #848e9c;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.action-btn:hover {
+  background: #2b3139;
+  color: #f0b90b;
+  border-color: #f0b90b;
+}
+
+.action-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.deposit-btn {
+  background: #f0b90b;
+  color: #000000;
+  border-color: #f0b90b;
+}
+
+.deposit-btn:hover {
+  opacity: 0.9;
+  color: #000000;
+}
+
+.feed-item.fade-in {
+  animation: fadeIn 0.5s;
+  background: rgba(240, 185, 11, 0.1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.user-avatar .avatar-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f0b90b, #f8d12f);
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.transaction-info {
+  flex: 1;
+}
+
+.user-action {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.transaction-details {
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+}
+
+.amount.profit {
+  color: #03a66d;
+  font-weight: 600;
+}
+
+.time {
+  color: #848e9c;
+}
+
+.transaction-badge span {
+  background: #474d57;
+  color: #ffffff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 10px;
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.stat-card {
+  background: #1e2329;
+  border: 1px solid #474d57;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.stat-card:hover {
+  border-color: #f0b90b;
+}
+
+.stat-icon {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.stat-content h4 {
+  color: #848e9c;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.stat-number {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.stat-change {
+  font-size: 12px;
+}
+
+.stat-change.positive {
+  color: #03a66d;
+}
+
+/* Market Section */
+.market-section {
+  background: #1e2329;
+  border: 1px solid #474d57;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.market-section h2 {
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.market-items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.market-item {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  background: #0b0e11;
+  border-radius: 8px;
+  border: 1px solid #474d57;
+}
+
+.market-symbol {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.market-price {
+  font-size: 16px;
+  color: #f0b90b;
+  margin-bottom: 4px;
+}
+
+.market-change {
+  font-size: 12px;
+}
+
+.market-change.positive {
+  color: #03a66d;
+}
+
+.market-change.negative {
+  color: #cf304a;
+}
+
+/* Profit Notifications */
+.profit-notifications {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.profit-alert {
+  background: linear-gradient(135deg, #03a66d, #02c76f);
+  border: 1px solid #03a66d;
+  border-radius: 12px;
+  padding: 16px;}
+
 </style>
