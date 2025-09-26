@@ -1,7 +1,7 @@
 // src/services/AuthService.js
 import axios from "axios";
 
-const API_URL = "https://fundybackend-9.onrender.com"; // ⚠️ change for production
+const API_URL = import.meta.env.VITE_API_URL;
 
 // ============ AXIOS INSTANCE ============
 const apiClient = axios.create({
